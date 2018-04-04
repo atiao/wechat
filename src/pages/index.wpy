@@ -1,0 +1,90 @@
+<style lang="less">
+  .index-page{
+    image{
+      width: 100%;
+    }
+    swiper{
+      height: 400rpx;
+      position: relative;
+    }
+    .title-box{
+      position: absolute;
+      top:150rpx;
+      color: #fff;
+      width: 100%;
+      background: rgba(255,255,255,0.2);
+      padding-left: 100rpx;
+    }
+    .title{
+      font-size: 40rpx;
+    }
+    .subtitle{
+      font-size: 50rpx;
+    }
+  }
+</style>
+<template>
+  <view class="index-page">
+    <!-- <swiper>
+      <block wx:for="{{swiperData}}">
+        <swiper-item>
+          <image src="{{item.img}}">
+          <view class="title-box">
+            <view class="title">{{item.title}}</view>
+            <view class="subtitle">{{item.subtitle}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper> -->
+    <view>混凝土</view>
+    <view>Concrete</view>
+    
+    <audio id="a1" src="http://fanyi.baidu.com/gettts?lan=en&text=Concrete&spd=3&source=web" controls name="Concrete" author=''></audio>
+    <button type="primary" bindtap="audioPlay">播放</button>
+    <!-- <footbar></footbar> -->
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import Footbar from '../components/footbar'
+  export default class Index extends wepy.page {
+    config = {
+    }
+    components = {
+      footbar: Footbar
+    }
+
+
+    data = {
+      swiperData: [
+        {
+          img:'../imgs/gw.jpg',
+          title:'华熙地产,',
+          subtitle:'为你寻找家的港湾'
+        }
+      ]
+    }
+
+    computed = {
+      
+    }
+
+    methods = {
+     audioPlay: function () {
+        this.audioCtx.play()
+      },
+    }
+
+    events = {
+      
+    }
+
+    onLoad() {
+      
+    }
+    onReady() {
+      this.audioCtx = wx.createAudioContext('a1')
+    }
+  }
+</script>

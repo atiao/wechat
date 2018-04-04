@@ -1,0 +1,44 @@
+<style lang="less">
+  .news-page{
+    
+  }
+</style>
+<template>
+  <view class="index-page">
+    房产资讯
+    <footbar></footbar>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import Footbar from '../components/footbar'
+  export default class Index extends wepy.page {
+    config = {
+    }
+    components = {
+      footbar: Footbar
+    }
+
+
+    data = {
+      
+    }
+
+    computed = {
+      
+    }
+
+    methods = {
+     
+    }
+
+    events = {
+      
+    }
+
+    onLoad() {
+      
+    }
+  }
+</script>

@@ -1,0 +1,85 @@
+<style lang="less">
+  .footbar{
+    width: 100%;
+    display: flex;
+    background: #f9f9f9;
+    height: 100rpx;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    // color:#fff;
+    view{
+      flex:1;
+      text-align: center;
+      font-size: 22rpx;
+    }
+    .icon{
+      margin-top: 12rpx;
+      width: 42rpx;
+      height: 42rpx;
+      background: data-uri("../imgs/bussiness.png") center no-repeat ;
+      background-size: 100%;
+      display: inline-block;
+      font-size: 0;
+      &.land{
+        background: data-uri("../imgs/land.png") center no-repeat ;
+        background-size: 100%;
+      }
+      &.news{
+        background: data-uri("../imgs/news.png") center no-repeat ;
+        background-size: 100%;
+      }
+    }
+  }
+</style>
+<template>
+  <view class="footbar">
+    <view wx:for="{{classData}}" @tap="clickJump({{item}})">
+      <view class="icon {{item.icon}}"></view>
+      <view>{{item.title}}</view>
+    </view>
+  </view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class footbar extends wepy.component {
+    data = {
+      classData: [
+        {
+          title:'买卖',
+          icon:'bussiness',
+          url:'index'
+        },
+        {
+          title:'地产',
+          icon:'land',
+          url:'land'
+        },
+        {
+          title:'资讯',
+          icon:'news',
+          url:'news'
+        },
+        
+      ]
+    }
+
+    events = {
+      
+    }
+
+    methods = {
+      clickJump(item) {
+        console.log(item,444)
+        let url = item.url
+        wepy.navigateTo({
+          url: url
+        })
+      }
+    }
+
+    onLoad () {
+    }
+  }
+</script>

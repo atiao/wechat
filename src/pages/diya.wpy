@@ -1,0 +1,46 @@
+<style lang="less">
+  .diya-page{
+    image{
+      width: 100%;
+    }
+  }
+</style>
+<template>
+  <view class="diya-page">
+    <image mode="widthFix" src="../imgs/diya.jpg"></image>
+    <footbar></footbar>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import Footbar from '../components/footbar'
+  export default class Index extends wepy.page {
+    config = {
+    }
+    components = {
+      footbar: Footbar
+    }
+
+
+    data = {
+      
+    }
+
+    computed = {
+      
+    }
+
+    methods = {
+     
+    }
+
+    events = {
+      
+    }
+
+    onLoad() {
+      
+    }
+  }
+</script>
